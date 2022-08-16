@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&family=PT+Sans&display=swap');
+
+:root {
+    /* VARIABLES */
+
+    /* Colores */
+    --primary-color: #1D37E0;
+    --primary-color-dark: #172BAD;
+    --secondary-color: #6072E6;
+    --ligth: #fff;
+    --dark: #313131;
+
+    /* Fuentes */
+    --font-heading: 'Open Sans', sans-serif;
+    --font-paragraph: 'PT Sans', sans-serif;
+
+    /* Margenes */
+    --margin-x: 4rem;
+    --margin-m: 2rem;
+    --margin-s: 1rem;
+
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    height: 100vh;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: var(--font-paragraph);
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/* Globales */
+
+.contenedor {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+a {text-decoration: none;}
+
+li {list-style: none;}
+
+p {
+    font-family: var(--font-paragraph);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    text-align: center;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+h4 {
+    font-size: 2.8rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Utilidades */
+
+.centrar__texto {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header */
+.header {
+    flex-direction: column;
+    padding: var(--margin-s);
+    background-color: var(--primary-color-dark);
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+        padding: var(--margin-m);
+    }
+}
+
+.header__link {
+    color: var(--ligth);
+}
+
+.header__title {
+    margin: 0;
+}
+
+.navegacion {
+    flex-direction: column;
+    gap: var(--margin-s);
+    width: auto;
+}
+
+@media (min-width: 768px) {
+    .navegacion {
+        flex-direction: row;
+        gap: var(--margin-m);
+    }
+}
+
+.navegacion__link {
+    color: var(--ligth);
+    font-size: 2rem;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.navegacion__link:hover {
+    opacity: .7;
+}
+
+
+
+/* Cover */
+.webp .cover {
+    background-image: url(../img/arreglar-auto.webp);
+}
+
+.no-webp .cover {
+    background-image: url(../img/arreglar-auto.jpg);
+}
+
+.cover {
+    height: 50rem;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-bottom: var(--margin-s);
+}
+
+.cover__capa {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .3;
+}
+
+.cover__title {
+    z-index: 2;
+}
+
+.cover__paragraph {
+    z-index: 2;
+    text-align: center;
+}
+
+
+/* Info */
+
+.main__title {
+    color: var(--primary-color);
+}
+
+.container {
+    display: grid;
+    column-gap: var(--margin-x);
+    row-gap: var(--margin-x);
+}
+
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
+.article {
+    margin-bottom: var(--margin-x);
+}
+
+.article__title {
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.article__paragraph {
+    text-align: justify;
+}
+
+.article__botton {
+    width: 100%;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    padding: .3rem 2rem;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+    .article__botton {
+        width: 30%;
+    }
+}
+
+.article a {
+    color: var(--ligth);
+}
+
+.asidebar__title {
+    color: var(--primary-color);
+}
+
+.asidebar-card {
+    margin-bottom: var(--margin-x);
+}
+
+/* Footer */
+
+.footer {
+    background-color: var(--primary-color-dark);
+    padding: var(--margin-m);
+}
+
+.footer .navegacion {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--margin-m);
+}
+
+.footer .navegacion a{
+    margin: 0 var(--margin-s);
+}
+
+.footer__paragraph {
+    color: var(--ligth);
+    text-align: center;
+}
+
+/* Blogs */
+
+.entrada {
+    margin: var(--margin-m) auto;
+}
+
+.entrada__image {
+    object-fit: cover;
+}
+
+.entrada__title {
+    text-align: left;
+    color: var(--primary-color);
+    text-transform: capitalize;
+}
+
+.entrada__paragraph {
+    text-align: justify;
+    margin-bottom: var(--margin-s);
+}
+
+/* Recomendaciones */
+
+.recomendaciones {
+    margin: var(--margin-x) auto;
+}
+
+@media (min-width: 768px) {
+    .recomendaciones {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(2, auto);
+        column-gap: 4rem;
+    }
+}
+
+.recomendaciones__title {
+    text-align: left;
+    color: var(--primary-color);
+}
+
+@media (min-width: 768px) {
+    .recomendaciones__title {
+        grid-column: 1 / 4;
+    }
+}
+
+.card {
+    margin: var(--margin-x) auto;
+}
+
+.card__image {
+    height: 30rem;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card__title {
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.card__paragraph {
+    text-align: justify;
+}
+
+.card__botton {
+    display: block;
+    background-color: var(--primary-color);
+    color: var(--ligth);
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: var(--margin-s);
+}
+
+/* Formulario */
+
+.contacto {
+    background-image: var(--i);
+    background-position: center;
+    background-size: cover;
+    height: 70vh;
+    padding-top: 13rem;
+}
+
+@media (min-width: 768px) {
+    .contacto {
+        padding-top: 5rem;
+    }
+}
+
+.form {
+    background: rgba(0, 0, 0, 0.663);
+    border-radius: 8px;
+    z-index: 10;
+    padding: var(--margin-s);
+    font-family: var(--font-heading);
+}
+
+.form .form__separador {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: var(--margin-s);
+}
+
+.form__label {
+    color: var(--ligth);
+    width: 12rem;
+    text-align: right;
+}
+
+.form__input {
+    width: 100%;
+    padding: var(--margin-s);
+    border: none;
+    border-radius: 8px;
+}
